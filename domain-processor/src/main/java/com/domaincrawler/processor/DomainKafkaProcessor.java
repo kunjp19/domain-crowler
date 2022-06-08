@@ -1,6 +1,6 @@
-package com.techprimers.domainprocessor;
+package com.domaincrawler.processor;
 
-import com.techprimers.domaincrawler.Domain;
+import com.domaincrawler.model.Domain;
 import org.apache.kafka.streams.kstream.KStream;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
