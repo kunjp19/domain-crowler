@@ -20,19 +20,17 @@ public class DomainCrawlerService {
 
     Mono<DomainList> domainListMono = WebClient.create()
         .get()
-        .uri("https://api.domainsdb.info/v1/domains/search?domain=" + name + "&zone=com")
+        .uri("https://api.domainsdb.info/v1/domains/search?domain=" + name)
         .accept(MediaType.APPLICATION_JSON)
         .retrieve()
         .bodyToMono(DomainList.class);
 
 
-    domainListMono.subscribe(domainList -> {
-      domainList.domains
-          .forEach(domain -> {
-            kafkaTemplate.send(KAFKA_TOPIC, domain);
-            System.out.println("Domain message" + domain.getDomain());
-          });
-    });
+    domainListMono.subscribe(domainList -> domainList.domains
+        .forEach(domain -> {
+          kafkaTemplate.send(KAFKA_TOPIC, domain);
+          System.out.println("Domain message" + domain.getDomain());
+        }));
 
   }
 }
