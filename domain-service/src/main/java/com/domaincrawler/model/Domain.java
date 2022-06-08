@@ -1,4 +1,4 @@
-package com.techprimers.domaincrawler;
+package com.domaincrawler.model;
 
 import lombok.Data;
 

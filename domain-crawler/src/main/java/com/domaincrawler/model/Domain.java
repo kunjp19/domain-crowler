@@ -1,4 +1,4 @@
-package com.techprimers.domaincrawler;
+package com.domaincrawler.model;
 
 import lombok.Data;
 
@@ -19,4 +19,4 @@ public class Domain implements Serializable  {
   String MX;
   String TXT;
 
-}
+  }

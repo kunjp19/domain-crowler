@@ -1,13 +1,13 @@
-package com.techprimers.domainservice;
+package com.domaincrawler;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DomainServiceApplication {
+public class DomainProcessorApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DomainServiceApplication.class, args);
+		SpringApplication.run(DomainProcessorApplication.class, args);
 	}
 
 }

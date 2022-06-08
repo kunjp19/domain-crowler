@@ -1,5 +1,7 @@
-package com.techprimers.domaincrawler;
+package com.domaincrawler.service;
 
+import com.domaincrawler.model.Domain;
+import com.domaincrawler.model.DomainList;
 import org.springframework.http.MediaType;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -26,7 +28,7 @@ public class DomainCrawlerService {
         .bodyToMono(DomainList.class);
 
 
-    domainListMono.subscribe(domainList -> domainList.domains
+    domainListMono.subscribe(domainList -> domainList.getDomains()
         .forEach(domain -> {
           kafkaTemplate.send(KAFKA_TOPIC, domain);
           System.out.println("Domain message" + domain.getDomain());

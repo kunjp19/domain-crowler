@@ -1,9 +1,8 @@
-package com.techprimers.domaincrawler;
+package com.domaincrawler.model;
 
 import lombok.Data;
 
 import java.util.List;
-import java.util.Objects;
 
 @Data
 public class DomainList {
